@@ -32,9 +32,9 @@ import java.util.TimerTask;
  */
 public class WebViewHandler extends Service {
 
-    String counter = "0";
+    private String counter = "0";
 
-    WebView wv;
+    private WebView wv;
 
     private Jockey jockey;
 
@@ -73,7 +73,7 @@ public class WebViewHandler extends Service {
         windowManager.addView(view, params);
 
         /**
-         * Initialize JockeyJS
+         * Initialize JockeyJS and load index.html with javascript
          */
 
         jockey = JockeyImpl.getDefault();

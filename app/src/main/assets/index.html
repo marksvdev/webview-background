@@ -1,0 +1,31 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <!-- JQuery isn't needed for JockeyJS, just used in this example. -->
+    <script type="text/javascript" src="file:///android_asset/jquery-1.9.1.js"></script>
+
+    <!-- Required includes. json2.js may not be required in specific instances. -->
+    <script type="text/javascript" src="file:///android_asset/jockey.js"></script>
+
+    <script type="text/javascript">
+            var x = 0;
+
+            setInterval(function () {
+            x++;
+            $('#counter').text(x);
+            }, 1000);
+
+            Jockey.on("get-counter", function() {
+				Jockey.send("set-counter", {counter: x} )
+				});
+    </script>
+
+</head>
+<body>
+
+<span id="counter">0</span>
+
+</body>
+</html>
+
